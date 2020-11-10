@@ -1,3 +1,24 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+Game.greeting
+game_mode = gets.chomp
+  if game_mode == "1"
+    puts "Would you like to go first? (y/n)"
+    first = gets.chomp
+    if first == "y"
+      game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
+      game.play
+    else
+      game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
+      game.play
+    end
+  elsif game_mode == "2"
+    puts "Decide between you who will go first."
+  elsif game_mode == "3"
+    puts "Let's see how they do!"
+    game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"))
+    game.play
+  else
+    puts "Please choose a valid game mode."
+  end
