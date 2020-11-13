@@ -71,7 +71,11 @@ class Game
       self.board.display
       puts "Congratulations #{self.winner}!"
     elsif self.draw?
+<<<<<<< HEAD
       self.board.display
+=======
+      self.board.dsiplay
+>>>>>>> d525fa7b58d475629085b46c183bef083893b607
       puts "Cat's Game!"
     end
   end
